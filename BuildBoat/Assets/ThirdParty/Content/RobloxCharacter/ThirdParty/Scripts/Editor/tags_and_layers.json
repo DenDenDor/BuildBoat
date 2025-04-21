@@ -1,0 +1,34 @@
+{
+    "tags": [
+        "Untagged",
+        "Respawn",
+        "Finish",
+        "EditorOnly",
+        "MainCamera",
+        "Player",
+        "GameController",
+        "Untagged",
+        "Respawn",
+        "Finish",
+        "EditorOnly",
+        "MainCamera",
+        "Player",
+        "GameController",
+        "Animal",
+        "TornadoObject",
+        "Water"
+    ],
+    "layers": [
+        "Default",
+        "TransparentFX",
+        "Ignore Raycast",
+        "Water",
+        "UI",
+        "Character",
+        "CharacterPart",
+        "Debris",
+        "Train",
+        "TrainVehicle",
+        "InvisibleWall"
+    ]
+}

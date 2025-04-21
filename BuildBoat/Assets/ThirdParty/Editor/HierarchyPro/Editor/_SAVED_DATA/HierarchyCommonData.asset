@@ -15,14 +15,19 @@ MonoBehaviour:
   ScenesTabs:
   - pin: 0
     path:
-    - 
+    - Assets/ThirdParty/Content/RobloxCharacter/Demo/Demo.unity
     guid:
-    - 
+    - 32b89faca0ec4f542bd72b810264d0b2
   - pin: 0
     path:
     - Assets/Scenes/SampleScene.unity
     guid:
     - 99c9720ab356a0642a771bea13969a05
+  - pin: 0
+    path:
+    - 
+    guid:
+    - 
   - pin: 0
     path:
     - Assets/Scenes/Demo/Game.unity
