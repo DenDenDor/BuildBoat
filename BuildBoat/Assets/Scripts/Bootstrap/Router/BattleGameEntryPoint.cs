@@ -8,5 +8,6 @@ public class BattleGameEntryPoint : AbstractGameEntryPoint
         new UpdateRouter(),
         new FactoryRouter(),
         new BuildRouter(),
+        new InventoryRouter(),
     };
 }
