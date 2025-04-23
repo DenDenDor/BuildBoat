@@ -14,7 +14,7 @@ public class InventoryRouter : IRouter
         
         List<InventoryModelGroup> items = new List<InventoryModelGroup>()
         {
-            new InventoryModelGroup(new InventoryItem() {Name = "Juno"}, 5)
+            new InventoryModelGroup(new InventoryItem(BlockType.Earth), 5)
         };
 
         foreach (var item in items)

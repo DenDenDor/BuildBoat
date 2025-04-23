@@ -2,5 +2,10 @@ using UnityEngine;
 
 public class InventoryItem
 {
-   public string Name { get; set; }
+   public BlockType BlockType { get; set; }
+
+   public InventoryItem(BlockType blockType)
+   {
+      BlockType = blockType;
+   }
 }
