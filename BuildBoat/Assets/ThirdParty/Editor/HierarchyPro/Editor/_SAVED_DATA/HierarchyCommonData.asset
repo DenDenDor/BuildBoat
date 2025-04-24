@@ -25,6 +25,11 @@ MonoBehaviour:
     - 7e47a05a04bae724aa8967a818b88f6c
   - pin: 0
     path:
+    - Assets/PostProcessing Profiles/Scene/TestScene.unity
+    guid:
+    - 839b900a521bb004ba842d0b47a42785
+  - pin: 0
+    path:
     - Assets/Voxel Arsenal/Demo/Scenes/VoxelDemo20.unity
     guid:
     - 55ded515061ae3e439a59009ecf94545
