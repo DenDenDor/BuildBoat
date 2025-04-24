@@ -1,9 +1,12 @@
 using UnityEngine;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 public class InventoryController : MonoBehaviour
 {
+    [SerializeField] private SerializedDictionary<BlockType, DataBlock> _spritesByTypes;
+    
     private InventoryModelGroup _selectedGroupItem;
     
     private readonly List<InventoryModelGroup> _items = new();
@@ -31,6 +34,7 @@ public class InventoryController : MonoBehaviour
     }
 
     public int CountSelectedBlocks => _selectedGroupItem.Amount;
+    public BlockType Selected => _selectedGroupItem.InventoryItem.BlockType;
 
     public event Action<InventoryModelGroup> Updated;
 
@@ -50,6 +54,16 @@ public class InventoryController : MonoBehaviour
         _items.AddRange(items);
     }
 
+    public Sprite GetSprite(BlockType type)
+    {
+        return _spritesByTypes[type].Sprite;
+    }   
+    
+    public Material GetMaterial(BlockType type)
+    {
+        return _spritesByTypes[type].Material;
+    }
+
     public void TakeBlock()
     {
         _selectedGroupItem.Amount--;
@@ -62,10 +76,19 @@ public class InventoryController : MonoBehaviour
         _selectedGroupItem = groupItem;
     }
 
-    public void AddBlock()
+    public void AddBlock(BlockType type)
     {
-        _selectedGroupItem.Amount++;
+        InventoryModelGroup modelGroup = _items.FirstOrDefault(x => x.InventoryItem.BlockType == type);
         
-        Updated?.Invoke(_selectedGroupItem);
+        modelGroup.Amount++;
+        
+        Updated?.Invoke(modelGroup);
     }
+}
+
+[Serializable]
+public class DataBlock
+{
+    public Sprite Sprite;
+    public Material Material;
 }

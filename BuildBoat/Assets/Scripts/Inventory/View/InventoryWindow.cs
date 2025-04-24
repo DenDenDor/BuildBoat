@@ -25,5 +25,10 @@ public class InventoryWindow : AbstractUiCreatorWindow
     public InventoryIcon GetIcon(InventoryModelGroup modelGroup)
     {
        return _viewsByModels.FirstOrDefault(x=>x.Value == modelGroup).Key;
+    } 
+    
+    public InventoryModelGroup GetModelGroup(InventoryIcon icon)
+    {
+       return _viewsByModels[icon];
     }
 }

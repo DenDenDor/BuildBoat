@@ -58,6 +58,18 @@ public class FactoryController : MonoBehaviour
         return _prefabs.FirstOrDefault(x => x.GetComponent<T>()).GetComponent<T>();
     }
 
+    public IEnumerable<T> FindAllPrefab<T>() where T : MonoBehaviour
+    {
+        List<T> prefabs = new();
+
+        foreach (var prefab in _prefabs.Where(x => x.GetComponent<T>()))
+        {
+            prefabs.Add(prefab.GetComponent<T>());
+        }
+        
+        return prefabs;
+    }
+
     public void CreateGameObject(GameObject prefab)
     {
         CreatedUi?.Invoke(prefab);

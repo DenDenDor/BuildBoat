@@ -14,14 +14,17 @@ public class InventoryRouter : IRouter
         
         List<InventoryModelGroup> items = new List<InventoryModelGroup>()
         {
-            new InventoryModelGroup(new InventoryItem(BlockType.Earth), 5)
+            new InventoryModelGroup(new InventoryItem(BlockType.Earth), 5),
+            new InventoryModelGroup(new InventoryItem(BlockType.Stone), 3)
         };
 
         foreach (var item in items)
         {
-            InventoryIcon icon =Window.Create(_prefab, item);
-            
+            InventoryIcon icon = Window.Create(_prefab, item);
+            icon.UpdateIcon(InventoryController.Instance.GetSprite(item.InventoryItem.BlockType));
             icon.UpdateText(item.Amount);
+            
+            icon.Clicked += OnClicked;
         }
         
         InventoryController.Instance.Add(items);
@@ -29,6 +32,11 @@ public class InventoryRouter : IRouter
         InventoryController.Instance.Select(items.FirstOrDefault());
         
         InventoryController.Instance.Updated += OnUpdated;
+    }
+
+    private void OnClicked(InventoryIcon obj)
+    {
+        InventoryController.Instance.Select(Window.GetModelGroup(obj));
     }
 
     private void OnUpdated(InventoryModelGroup obj)
