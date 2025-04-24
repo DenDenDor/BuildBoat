@@ -246,6 +246,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _meshRenderer: {fileID: 5650688391613507298}
   _child: {fileID: 366610225269414152}
+  _particleSystem: {fileID: 1570490977758113565, guid: 59514b9b1a530464099a6d8ed7dc1d93, type: 3}
 --- !u!1 &6897927854810471888
 GameObject:
   m_ObjectHideFlags: 0
