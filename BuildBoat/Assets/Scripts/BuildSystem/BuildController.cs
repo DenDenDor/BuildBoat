@@ -24,7 +24,8 @@ public class BuildController : MonoBehaviour
         }
     }
 
-    private Dictionary<BlockView, BlockType> _blocksByTypes = new();
+    private readonly Dictionary<BlockView, BlockType> _blocksByTypes = new();
+    
     private void Awake()
     {
         if (_instance != null && _instance != this)

@@ -54,6 +54,8 @@ public class BuildRouter : IRouter
                 AddBlock(placePosition, InventoryController.Instance.Selected);
                 
                 InventoryController.Instance.TakeBlock();
+                
+                Window.PlayBuildAnimation();
             }
         }
     }
