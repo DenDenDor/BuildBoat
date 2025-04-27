@@ -12,14 +12,14 @@ public class BuildWayButton : MonoBehaviour
     private Vector2 _enlargedSize = new Vector2(110, 110);
     private float _animationDuration = 0.3f; // Длительность анимации в секундах
 
-    public event Action<BuildWayButton> Clicked;
+    public event Action Clicked;
     
     private void Awake()
     {
         _rectTransform = GetComponent<RectTransform>();
         _rectTransform.sizeDelta = _originalSize; // Устанавливаем начальный размер
         
-        GetComponent<Button>().onClick.AddListener(() => Clicked?.Invoke(this));
+        GetComponent<Button>().onClick.AddListener(() => Clicked?.Invoke());
     }
 
     // Метод для плавного увеличения размера

@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using Object = UnityEngine.Object;
 
 public class BuildRouter : IRouter
@@ -16,21 +17,14 @@ public class BuildRouter : IRouter
     {
         _prefab = FactoryController.Instance.FindPrefab<BlockView>();
 
-        // // Fill initial positions
-        // foreach (var position in new BuildPosition().Get())
-        // {
-        //     AddBlock(GetPlacePosition(position), BlockType.Earth);
-        // }
-
         _startPoint = Window.StartPoint.position;
         _endPoint = Window.EndPoint.position;
         FillAreaWithBlocks();
 
         UpdateController.Instance.Add(OnUpdate);
 
-        // Устанавливаем начальный режим и обновляем UI
-        Window.PutBlock.Clicked += (a) => SetMode(true);
-        Window.DestroyBlock.Clicked += (a) => SetMode(false);
+        Window.PutBlock.Clicked += () => SetMode(true);
+        Window.DestroyBlock.Clicked += () => SetMode(false);
         SetMode(true, true);
 
     }
@@ -40,20 +34,27 @@ public class BuildRouter : IRouter
     private void SetMode(bool isPutMode, bool forceSet = false)
     {
         if (_isPutMode == isPutMode && !forceSet) return;
+
+        PlayerView playerView = UiController.Instance.GetWindow<PlayerWindow>().PlayerView;
         
         _isPutMode = isPutMode;
         
-        // Обновляем UI кнопок
         Window.PutBlock.Increase();
         Window.DestroyBlock.Decrease();
         
         if (isPutMode)
         {
+            playerView.Pencil.Appear();
+            playerView.Scissors.Disappear();
+            
             Window.PutBlock.Increase();
             Window.DestroyBlock.Decrease();
         }
         else
         {
+            playerView.Scissors.Appear();
+            playerView.Pencil.Disappear();
+
             Window.PutBlock.Decrease();
             Window.DestroyBlock.Increase();
         }
@@ -63,6 +64,10 @@ public class BuildRouter : IRouter
     {
         if (Input.GetMouseButtonDown(0))
         {
+            // Проверяем, не кликнули ли мы по UI элементу
+            if (EventSystem.current.IsPointerOverGameObject())
+                return;
+
             if (_isPutMode)
             {
                 TryPlaceBlock();
@@ -73,6 +78,7 @@ public class BuildRouter : IRouter
             }
         }
     }
+
     
     private void FillAreaWithBlocks()
     {
