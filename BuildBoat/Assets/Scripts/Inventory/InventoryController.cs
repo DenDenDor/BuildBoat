@@ -58,6 +58,11 @@ public class InventoryController : MonoBehaviour
     {
         return _spritesByTypes[type].Sprite;
     }   
+     
+    public Color GetDestroyColor(BlockType type)
+    {
+        return _spritesByTypes[type].DestroyColor;
+    }   
     
     public Material GetMaterial(BlockType type)
     {
@@ -91,4 +96,5 @@ public class DataBlock
 {
     public Sprite Sprite;
     public Material Material;
+    public Color DestroyColor;
 }

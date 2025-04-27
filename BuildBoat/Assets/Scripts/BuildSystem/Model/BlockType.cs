@@ -3,5 +3,6 @@ using UnityEngine;
 public enum BlockType
 {
     Earth,
-    Stone
+    Stone,
+    Grass
 }

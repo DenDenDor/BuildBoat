@@ -29,3 +29,6 @@
 ExportedObj/
 *.csproj
 *.unityproj
+
+# Custom folders to ignore
+Recordings/
