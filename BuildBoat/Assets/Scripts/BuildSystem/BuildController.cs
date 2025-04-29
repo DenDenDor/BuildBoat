@@ -1,6 +1,7 @@
 using UnityEngine;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 public class BuildController : MonoBehaviour
 {
@@ -25,6 +26,8 @@ public class BuildController : MonoBehaviour
     }
 
     private readonly Dictionary<BlockView, BlockInfo> _blocksByTypes = new();
+
+    public List<BlockView> Blocks => _blocksByTypes.Where(x => x.Value.CanBeDestroy).Select(x=>x.Key).ToList();
     
     private void Awake()
     {
@@ -46,5 +49,10 @@ public class BuildController : MonoBehaviour
     public BlockInfo GetBlockType(BlockView blockView)
     {
         return _blocksByTypes[blockView];
+    }
+
+    public void Remove(BlockView blockView)
+    {
+        _blocksByTypes.Remove(blockView);   
     }
 }

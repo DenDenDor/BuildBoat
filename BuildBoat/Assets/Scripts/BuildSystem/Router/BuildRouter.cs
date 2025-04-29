@@ -186,6 +186,7 @@ public class BuildRouter : IRouter
                 BlockType blockType = blockInfo.Type;
                 Window.Remove(blockView);
                 InventoryController.Instance.AddBlock(blockType);
+                BuildController.Instance.Remove(blockView);
             }
         }
     }

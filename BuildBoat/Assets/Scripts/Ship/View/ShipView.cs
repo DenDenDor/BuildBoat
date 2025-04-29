@@ -6,30 +6,51 @@ public class ShipView : MonoBehaviour
 {
     [Header("References")]
     public Transform motorAttachmentPoint; // Точка крепления мотора
-    public Transform motor; // Ссылка на мотор
+    public float playerMassCompensationForce = 10f; // Сила компенсации веса игрока
+    public float buoyancyForce = 5f; // Сила плавучести
     
     [Header("Movement Settings")]
-    [Range(0.1f, 50)] public float maxMotorPower = 25; // Сильно уменьшенная мощность
-    [Range(1f, 30f)] public float rotationSpeed = 5f; // Уменьшенная скорость вращения
-    [Range(5f, 90f)] public float maxRotationAngle = 30f; // Уменьшенный максимальный угол
+    [Range(0.1f, 50)] public float maxMotorPower = 25;
+    [Range(1f, 30f)] public float rotationSpeed = 5f;
+    [Range(5f, 90f)] public float maxRotationAngle = 30f;
     
     [Header("Damping")]
-    [Range(0.9f, 0.99f)] public float movementDamping = 0.95f; // Замедление движения
-    [Range(0.9f, 0.99f)] public float rotationDamping = 0.9f; // Замедление вращения
+    [Range(0.9f, 0.99f)] public float movementDamping = 0.98f; // Увеличенное демпфирование
+    [Range(0.9f, 0.99f)] public float rotationDamping = 0.95f;
     
     private Rigidbody shipRigidbody;
     private float normalizedOffset;
+    private bool playerOnBoard;
+    private Rigidbody playerRigidbody;
+
     
     void Start()
     {
         shipRigidbody = GetComponent<Rigidbody>();
-        shipRigidbody.linearDamping = 0.5f; // Добавляем сопротивление движению
-        shipRigidbody.angularDamping = 0.5f; // Добавляем сопротивление вращению
-        //CalculateCenterOfMass();
+        shipRigidbody.linearDamping = 1f; // Больше сопротивления воде
+        shipRigidbody.angularDamping = 1f;
         CalculateMotorOffset();
     }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            playerOnBoard = true;
+            playerRigidbody = other.GetComponent<Rigidbody>();
+        }
+    }
+
+    void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            playerOnBoard = false;
+            playerRigidbody = null;
+        }
+    }
     
-    void CalculateCenterOfMass(List<BlockView> blockViews)
+    public void CalculateCenterOfMass(List<BlockView> blockViews)
     {
         Vector3 centerOfMass = Vector3.zero;
         int blockCount = 0;
@@ -79,23 +100,41 @@ public class ShipView : MonoBehaviour
     
     void FixedUpdate()
     {
+        if (motorAttachmentPoint == null)
+        {
+            return;
+        }
+        
         // Применяем силу мотора
-        Vector3 currentMotorPosition = motorAttachmentPoint.position;
-        Vector3 forceDirection = motorAttachmentPoint.forward;
-        
-        // Сила уменьшается в зависимости от расстояния от центра
-        float distanceFactor = Mathf.Lerp(0.7f, 1f, Mathf.Abs(normalizedOffset));
-        float effectivePower = maxMotorPower * distanceFactor * 0.1f; // Дополнительное уменьшение
-        
-        shipRigidbody.AddForceAtPosition(forceDirection * effectivePower, currentMotorPosition);
-        
-        // Применяем демпфирование
+        shipRigidbody.AddForce(Vector3.up * buoyancyForce, ForceMode.Force);
+
+        // Компенсируем вес игрока, если он на борту
+        if (playerOnBoard && playerRigidbody != null)
+        {
+            Vector3 compensationForce = Vector3.up * playerMassCompensationForce * playerRigidbody.mass;
+            shipRigidbody.AddForce(compensationForce, ForceMode.Force);
+        }
+
+        // Управление мотором (оставляем как было)
+        if (motorAttachmentPoint != null)
+        {
+            Vector3 currentMotorPosition = motorAttachmentPoint.position;
+            Vector3 forceDirection = motorAttachmentPoint.forward;
+            
+            float distanceFactor = Mathf.Lerp(0.7f, 1f, Mathf.Abs(normalizedOffset));
+            float effectivePower = maxMotorPower * distanceFactor * 0.1f;
+            
+            shipRigidbody.AddForceAtPosition(forceDirection * effectivePower, currentMotorPosition);
+        }
+
+        // Водное демпфирование
         shipRigidbody.linearVelocity *= movementDamping;
         shipRigidbody.angularVelocity *= rotationDamping;
+
         
         // Визуализация
-        Debug.DrawRay(currentMotorPosition, forceDirection * 2, Color.red);
-        Debug.DrawLine(shipRigidbody.worldCenterOfMass, currentMotorPosition, Color.blue);
+        // Debug.DrawRay(currentMotorPosition, forceDirection * 2, Color.red);
+        // Debug.DrawLine(shipRigidbody.worldCenterOfMass, currentMotorPosition, Color.blue);
     }
     
     void OnDrawGizmos()

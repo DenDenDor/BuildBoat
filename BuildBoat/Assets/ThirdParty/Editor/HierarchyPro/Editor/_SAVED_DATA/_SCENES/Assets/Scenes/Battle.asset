@@ -19,6 +19,76 @@ MonoBehaviour:
   - data: []
   - data: []
   - data: []
-  - data: []
+  - data:
+    - saverType: 6
+      id_in_external_heap: 1335112005
+      indentifierVersion: GlobalObjectId_V1
+      identifierTypetargetObjectIdtargetPrefabId: -2-44e359281e899a5499882579f4806a3a-1920888715-0
+      namesPathBackup: ShipView
+      siblingsPathBackup: 17
+      boolValue: 0
+      stringValue: 
+      highLighterData: []
+      iconData:
+      - icon_guid: Library/sv_icon_dot5_pix16_gizmo
+        icon_path: 
+        has_icon_color: 0
+        icon_color: {r: 0, g: 0, b: 0, a: 0}
+    - saverType: 6
+      id_in_external_heap: 481481876
+      indentifierVersion: GlobalObjectId_V1
+      identifierTypetargetObjectIdtargetPrefabId: -2-44e359281e899a5499882579f4806a3a-1589586819-0
+      namesPathBackup: "Cube (1)\xBEGameObject (1)"
+      siblingsPathBackup: "18\xBE1"
+      boolValue: 0
+      stringValue: 
+      highLighterData: []
+      iconData:
+      - icon_guid: Library/sv_icon_dot13_pix16_gizmo
+        icon_path: 
+        has_icon_color: 0
+        icon_color: {r: 0, g: 0, b: 0, a: 0}
+    - saverType: 6
+      id_in_external_heap: 273306212
+      indentifierVersion: GlobalObjectId_V1
+      identifierTypetargetObjectIdtargetPrefabId: -2-44e359281e899a5499882579f4806a3a-491884000-0
+      namesPathBackup: "Cube (1)\xBEGameObject (2)"
+      siblingsPathBackup: "18\xBE2"
+      boolValue: 0
+      stringValue: 
+      highLighterData: []
+      iconData:
+      - icon_guid: Library/sv_icon_dot13_pix16_gizmo
+        icon_path: 
+        has_icon_color: 0
+        icon_color: {r: 0, g: 0, b: 0, a: 0}
+    - saverType: 6
+      id_in_external_heap: -576372535
+      indentifierVersion: GlobalObjectId_V1
+      identifierTypetargetObjectIdtargetPrefabId: -2-44e359281e899a5499882579f4806a3a-1940534935-0
+      namesPathBackup: "Cube (1)\xBEGameObject (3)"
+      siblingsPathBackup: "18\xBE3"
+      boolValue: 0
+      stringValue: 
+      highLighterData: []
+      iconData:
+      - icon_guid: Library/sv_icon_dot13_pix16_gizmo
+        icon_path: 
+        has_icon_color: 0
+        icon_color: {r: 0, g: 0, b: 0, a: 0}
+    - saverType: 6
+      id_in_external_heap: 1059911187
+      indentifierVersion: GlobalObjectId_V1
+      identifierTypetargetObjectIdtargetPrefabId: -2-44e359281e899a5499882579f4806a3a-1183031479-0
+      namesPathBackup: "Cube (1)\xBEGameObject"
+      siblingsPathBackup: "18\xBE0"
+      boolValue: 0
+      stringValue: 
+      highLighterData: []
+      iconData:
+      - icon_guid: Library/sv_icon_dot13_pix16_gizmo
+        icon_path: 
+        has_icon_color: 0
+        icon_color: {r: 0, g: 0, b: 0, a: 0}
   BookMarks_InternalGlobal: []
   HierExpands_InternalGlobal: []
