@@ -25,6 +25,11 @@ MonoBehaviour:
     - 7e47a05a04bae724aa8967a818b88f6c
   - pin: 0
     path:
+    - Assets/Scenes/SampleScene.unity
+    guid:
+    - 99c9720ab356a0642a771bea13969a05
+  - pin: 0
+    path:
     - 
     guid:
     - 
@@ -68,11 +73,6 @@ MonoBehaviour:
     - Assets/Voxel Arsenal/Demo/Scenes/VoxelDemo01.unity
     guid:
     - a0b791ee4b389c8489113bb0f39271c8
-  - pin: 0
-    path:
-    - Assets/Scenes/SampleScene.unity
-    guid:
-    - 99c9720ab356a0642a771bea13969a05
   - pin: 0
     path:
     - Assets/ThirdParty/Content/RobloxCharacter/Demo/Demo.unity
