@@ -1,3 +1,4 @@
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -7,7 +8,7 @@ public class InventoryButton : MonoBehaviour
 
     private bool _selected;
     
-    private Color _selectedColor = Color.white;
+    [SerializeField] private Color _selectedColor = Color.white;
     private Color _deselectedColor;
     
     private void Start()
@@ -22,13 +23,21 @@ public class InventoryButton : MonoBehaviour
 
     private void Select()
     {
+        if (_selected)
+            return;
+        
         _selected = true;
         _button.image.color = _selectedColor;
+        float scale = 0.03f;
+
+        transform.DOScale(Vector3.one + new Vector3(scale, scale, scale), 0.3f).SetEase(Ease.OutBounce);
         InventorySelector.Instance.SelectButton(this);
     }
 
     public void Deselect()
     {
+        transform.DOScale(Vector3.one , 0.3f).SetEase(Ease.InBounce);
+
         _selected = false;
         _button.image.color = _deselectedColor;
     }

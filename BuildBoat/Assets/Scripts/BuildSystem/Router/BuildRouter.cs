@@ -176,21 +176,24 @@ public class BuildRouter : IRouter
     {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
-        
-        if (Physics.Raycast(ray, out hit, Window.PlaceDistance, Window.BlockLayer) && hit.collider.TryGetComponent(out BlockView blockView))
+    
+        if (Physics.Raycast(ray, out hit, Window.PlaceDistance, Window.BlockLayer) && 
+            hit.collider.TryGetComponent(out BlockView blockView))
         {
-            BlockInfo blockInfo = BuildController.Instance.GetBlockType(blockView);
-
-            if (blockInfo.CanBeDestroy)
+            if (BuildController.Instance.Blocks.Contains(blockView)) // Check if block exists
             {
-                BlockType blockType = blockInfo.Type;
-                Window.Remove(blockView);
-                InventoryController.Instance.AddBlock(blockType);
-                BuildController.Instance.Remove(blockView);
+                BlockInfo blockInfo = BuildController.Instance.GetBlockType(blockView);
+
+                if (blockInfo.CanBeDestroy)
+                {
+                    BlockType blockType = blockInfo.Type;
+                    BuildController.Instance.Remove(blockView);
+                    Window.Remove(blockView);
+                    InventoryController.Instance.AddBlock(blockType);
+                }
             }
         }
     }
-
     public void Exit()
     {
         

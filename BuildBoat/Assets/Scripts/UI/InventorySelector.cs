@@ -24,6 +24,9 @@ public class InventorySelector : MonoBehaviour
 
     public void SelectButton(InventoryButton button)
     {
+        if (_selectedButton == button)
+            return;
+        
         _selectedButton?.Deselect();
         _selectedButton = button;
     }
