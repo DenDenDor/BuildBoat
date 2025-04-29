@@ -771,6 +771,30 @@ PrefabInstance:
       propertyPath: m_HorizontalScrollbar
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 4485303398971089118, guid: 9040f622ab8444c8ea643a7329da7cb1, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4485303398971089118, guid: 9040f622ab8444c8ea643a7329da7cb1, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4485303398971089118, guid: 9040f622ab8444c8ea643a7329da7cb1, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 4485303398971089118, guid: 9040f622ab8444c8ea643a7329da7cb1, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 190
+      objectReference: {fileID: 0}
+    - target: {fileID: 4485303398971089118, guid: 9040f622ab8444c8ea643a7329da7cb1, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 4485303398971089118, guid: 9040f622ab8444c8ea643a7329da7cb1, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -105
+      objectReference: {fileID: 0}
     - target: {fileID: 5299119979106110063, guid: 9040f622ab8444c8ea643a7329da7cb1, type: 3}
       propertyPath: m_Name
       value: InventoryCanvas
@@ -801,7 +825,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8764715223039109337, guid: 9040f622ab8444c8ea643a7329da7cb1, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -0.00067667756
+      value: -0.0010254516
       objectReference: {fileID: 0}
     - target: {fileID: 9110953914591826248, guid: 9040f622ab8444c8ea643a7329da7cb1, type: 3}
       propertyPath: m_AnchorMax.x
@@ -18014,7 +18038,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 96932157203104488, guid: 47869810618a348c78e1d1e7a5d06d4b, type: 3}
       propertyPath: m_Name
-      value: ShopCanvas
+      value: MenuCanvas
       objectReference: {fileID: 0}
     - target: {fileID: 96932157203104488, guid: 47869810618a348c78e1d1e7a5d06d4b, type: 3}
       propertyPath: m_IsActive
@@ -18091,6 +18115,14 @@ PrefabInstance:
     - target: {fileID: 2394244806171830152, guid: 47869810618a348c78e1d1e7a5d06d4b, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -135
+      objectReference: {fileID: 0}
+    - target: {fileID: 2458583781113079703, guid: 47869810618a348c78e1d1e7a5d06d4b, type: 3}
+      propertyPath: _testOpenChest
+      value: 
+      objectReference: {fileID: 21300000, guid: fbc73d7a9819a4e05b2fd0098fec355f, type: 3}
+    - target: {fileID: 4218812990093124220, guid: 47869810618a348c78e1d1e7a5d06d4b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4430640216660392409, guid: 47869810618a348c78e1d1e7a5d06d4b, type: 3}
       propertyPath: m_IsActive
