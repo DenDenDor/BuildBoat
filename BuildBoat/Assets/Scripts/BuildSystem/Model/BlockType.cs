@@ -2,7 +2,16 @@ using UnityEngine;
 
 public enum BlockType
 {
-    Earth,
-    Stone,
-    Grass
+    Grass,
+    Cannon,
+    Chair,
+    Corroded,
+    Gold,
+    Metal,
+    Motor,
+    Obsidian,
+    PilotChair,
+    Rock,
+    Sand,
+    Wood
 }

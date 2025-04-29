@@ -24,7 +24,7 @@ public class BuildController : MonoBehaviour
         }
     }
 
-    private readonly Dictionary<BlockView, BlockType> _blocksByTypes = new();
+    private readonly Dictionary<BlockView, BlockInfo> _blocksByTypes = new();
     
     private void Awake()
     {
@@ -37,12 +37,13 @@ public class BuildController : MonoBehaviour
         _instance = this;
     }
 
-    public void Add(BlockView blockView, BlockType type)
+    public void Add(BlockView blockView, BlockInfo type)
     {
+        Debug.Log("BLOCK " + blockView.name + " " + type.Type);
         _blocksByTypes.Add(blockView, type);   
     }
 
-    public BlockType GetBlockType(BlockView blockView)
+    public BlockInfo GetBlockType(BlockView blockView)
     {
         return _blocksByTypes[blockView];
     }

@@ -8,15 +8,13 @@ public class BuildRouter : IRouter
 {
     private BuildWindow Window => UiController.Instance.GetWindow<BuildWindow>();
     
-    private BlockView _prefab;
     private Vector3? _startPoint;
     private Vector3? _endPoint;
-    private bool _isSettingArea = false;
 
+    private BlockCreatorVisitor _blockCreatorVisitor = new();
+    
     public void Init()
     {
-        _prefab = FactoryController.Instance.FindPrefab<BlockView>();
-
         _startPoint = Window.StartPoint.position;
         _endPoint = Window.EndPoint.position;
         FillAreaWithBlocks();
@@ -64,7 +62,6 @@ public class BuildRouter : IRouter
     {
         if (Input.GetMouseButtonDown(0))
         {
-            // Проверяем, не кликнули ли мы по UI элементу
             if (EventSystem.current.IsPointerOverGameObject())
                 return;
 
@@ -87,7 +84,6 @@ public class BuildRouter : IRouter
         Vector3 start = _startPoint.Value;
         Vector3 end = _endPoint.Value;
 
-        // Ensure start has the smaller coordinates
         float minX = Mathf.Min(start.x, end.x);
         float minY = Mathf.Min(start.y, end.y);
         float minZ = Mathf.Min(start.z, end.z);
@@ -107,11 +103,11 @@ public class BuildRouter : IRouter
 
                     if (y == maxY)
                     {
-                        AddBlock(placePosition, BlockType.Grass);
+                        AddBlock(placePosition, BlockType.Grass, false);
                     }
                     else
                     {
-                        AddBlock(placePosition, BlockType.Stone);
+                        AddBlock(placePosition, BlockType.Rock, false);
                     }
                 }
             }
@@ -137,19 +133,34 @@ public class BuildRouter : IRouter
 
             if (!Physics.CheckBox(placePosition, halfExtents, Quaternion.identity, Window.BlockLayer))
             {
-                AddBlock(placePosition, InventoryController.Instance.Selected);
+                AddBlock(placePosition, InventoryController.Instance.Selected, true);
                 InventoryController.Instance.TakeBlock();
                 Window.PlayBuildAnimation();
             }
         }
     }
 
-    private void AddBlock(Vector3 placePosition, BlockType blockType)
+    private void AddBlock(Vector3 placePosition, BlockType blockType, bool canBeDestroy)
     {
-        BlockView blockView = Object.Instantiate(_prefab, placePosition, Quaternion.identity);
-        blockView.UpdateRenderer(InventoryController.Instance.GetMaterial(blockType), InventoryController.Instance.GetDestroyColor(blockType));
-        BuildController.Instance.Add(blockView, blockType);
+        if (blockType == BlockType.Motor)
+        {
+            Vector3 directionToPlayer = UiController.Instance.GetWindow<PlayerWindow>().PlayerView.transform.position - placePosition;
+            directionToPlayer.y = 0;
+        
+            if (directionToPlayer != Vector3.zero)
+            {
+                float angle = Mathf.Round(Vector3.SignedAngle(Vector3.back, directionToPlayer, Vector3.up) / 90) * 90;
+                Quaternion rotation = Quaternion.Euler(0, angle, 0);
+                var blockView = _blockCreatorVisitor.Create(blockType, placePosition, rotation);
+                BuildController.Instance.Add(blockView, new BlockInfo(blockType, canBeDestroy));
+                return;
+            }
+        }
+    
+        var blockView1 = _blockCreatorVisitor.Create(blockType, placePosition);
+        BuildController.Instance.Add(blockView1, new BlockInfo(blockType, canBeDestroy));
     }
+
 
     private Vector3 GetPlacePosition(Vector3 placePosition)
     {
@@ -168,9 +179,14 @@ public class BuildRouter : IRouter
         
         if (Physics.Raycast(ray, out hit, Window.PlaceDistance, Window.BlockLayer) && hit.collider.TryGetComponent(out BlockView blockView))
         {
-            BlockType blockType = BuildController.Instance.GetBlockType(blockView);
-            Window.Remove(blockView);
-            InventoryController.Instance.AddBlock(blockType);
+            BlockInfo blockInfo = BuildController.Instance.GetBlockType(blockView);
+
+            if (blockInfo.CanBeDestroy)
+            {
+                BlockType blockType = blockInfo.Type;
+                Window.Remove(blockView);
+                InventoryController.Instance.AddBlock(blockType);
+            }
         }
     }
 

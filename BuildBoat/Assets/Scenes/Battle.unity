@@ -6200,21 +6200,66 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _spritesByTypes:
     _items:
-    - _key: 0
+    - _key: 10
       _value:
         Sprite: {fileID: 21300000, guid: aa08e88e46d5e394bb21b7964674bd6d, type: 3}
         Material: {fileID: 2100000, guid: 5eaacd9897beb9b46ad9a0d1dd211561, type: 2}
         DestroyColor: {r: 0.98765564, g: 1, b: 0, a: 1}
-    - _key: 1
+    - _key: 7
       _value:
         Sprite: {fileID: 21300000, guid: 2dd47770c05f04546a5283e9a4c41efb, type: 3}
         Material: {fileID: 2100000, guid: 9a1a0db06161d2549b5337c58b0b10e8, type: 2}
         DestroyColor: {r: 0.3301887, g: 0.3301887, b: 0.3301887, a: 1}
-    - _key: 2
+    - _key: 0
       _value:
-        Sprite: {fileID: 21300000, guid: 06942620de663c744862f1815917c76a, type: 3}
+        Sprite: {fileID: 21300000, guid: d9cca85b431ed4316a95022e1f31314c, type: 3}
         Material: {fileID: 2100000, guid: 9d878129fddcd0f41bf9665952511e53, type: 2}
         DestroyColor: {r: 0.17335251, g: 0.9150943, b: 0.07338022, a: 1}
+    - _key: 9
+      _value:
+        Sprite: {fileID: 21300000, guid: fc8718704a5814946992679242e3ed6e, type: 3}
+        Material: {fileID: 2100000, guid: 4ae35ebdefa43408eb3894d851cb342c, type: 2}
+        DestroyColor: {r: 0.509434, g: 0.509434, b: 0.509434, a: 1}
+    - _key: 1
+      _value:
+        Sprite: {fileID: 21300000, guid: 196ad3034f9c13140853fcc1dc252f67, type: 3}
+        Material: {fileID: 2100000, guid: 4ae35ebdefa43408eb3894d851cb342c, type: 2}
+        DestroyColor: {r: 0.509434, g: 0.509434, b: 0.509434, a: 1}
+    - _key: 2
+      _value:
+        Sprite: {fileID: 21300000, guid: 5822ec43a16fc7148a64a44d95c1c874, type: 3}
+        Material: {fileID: 2100000, guid: 4ae35ebdefa43408eb3894d851cb342c, type: 2}
+        DestroyColor: {r: 0.509434, g: 0.509434, b: 0.509434, a: 1}
+    - _key: 3
+      _value:
+        Sprite: {fileID: 21300000, guid: abeb16ba4632c445dba45e647344fd57, type: 3}
+        Material: {fileID: 2100000, guid: 5f6f29576e00a4a03a51f4749def8443, type: 2}
+        DestroyColor: {r: 0.5754717, g: 0.36102706, b: 0.36102706, a: 1}
+    - _key: 4
+      _value:
+        Sprite: {fileID: 21300000, guid: 06942620de663c744862f1815917c76a, type: 3}
+        Material: {fileID: 2100000, guid: 2a57d75a7258a7e4f8aedee39e7792db, type: 2}
+        DestroyColor: {r: 0.8773585, g: 0.53176427, b: 0.020692414, a: 1}
+    - _key: 5
+      _value:
+        Sprite: {fileID: 21300000, guid: a630130b9c1c23c439b4073569f0db19, type: 3}
+        Material: {fileID: 2100000, guid: f13593cf7b4dd024bbabf946c2d35a18, type: 2}
+        DestroyColor: {r: 0.254717, g: 0.254717, b: 0.254717, a: 1}
+    - _key: 6
+      _value:
+        Sprite: {fileID: 21300000, guid: f62973b5092ed65408db4834871014cf, type: 3}
+        Material: {fileID: 2100000, guid: f13593cf7b4dd024bbabf946c2d35a18, type: 2}
+        DestroyColor: {r: 0.6981132, g: 0.062566735, b: 0.062566735, a: 1}
+    - _key: 8
+      _value:
+        Sprite: {fileID: 21300000, guid: fc1691b584a0b7242ab284993dc56e18, type: 3}
+        Material: {fileID: 2100000, guid: f13593cf7b4dd024bbabf946c2d35a18, type: 2}
+        DestroyColor: {r: 0.5566038, g: 0.47521362, b: 0.47521362, a: 1}
+    - _key: 11
+      _value:
+        Sprite: {fileID: 21300000, guid: 3381a1ad0528b7a45bf81bfd97f1f02c, type: 3}
+        Material: {fileID: 2100000, guid: 6e2cae3fb7ebf4148ad7d0d637717903, type: 2}
+        DestroyColor: {r: 0.8018868, g: 0.34633473, b: 0, a: 1}
 --- !u!1 &343533657
 GameObject:
   m_ObjectHideFlags: 0

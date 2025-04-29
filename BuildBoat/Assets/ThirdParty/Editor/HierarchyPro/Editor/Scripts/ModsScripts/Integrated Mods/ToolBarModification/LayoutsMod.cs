@@ -136,7 +136,7 @@ namespace EMX.HierarchyPlugin.Editor.Mods
                 }
                 catch (Exception ex)
                 {
-                    Debug.LogError($"Error initializing LayoutsMod properties: {ex}");
+//                    Debug.LogError($"Error initializing LayoutsMod properties: {ex}");
                 }
             }
         }

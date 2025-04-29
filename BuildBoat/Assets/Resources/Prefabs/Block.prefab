@@ -130,7 +130,7 @@ GameObject:
   - component: {fileID: 6789030269207552030}
   - component: {fileID: 1164598636362759670}
   - component: {fileID: 9170616040064393237}
-  - component: {fileID: 1484303876697960490}
+  - component: {fileID: 3075136337578027556}
   m_Layer: 14
   m_Name: Block
   m_TagString: Untagged
@@ -232,7 +232,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1484303876697960490
+--- !u!114 &3075136337578027556
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -241,12 +241,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 5895037786133883214}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ad93d5540b15f7e4b94c2073f419afc8, type: 3}
+  m_Script: {fileID: 11500000, guid: 4c06adfc54eca2b43b610b64a8a8445e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _meshRenderer: {fileID: 5650688391613507298}
   _child: {fileID: 366610225269414152}
   _particleSystem: {fileID: 1570490977758113565, guid: 59514b9b1a530464099a6d8ed7dc1d93, type: 3}
+  _color: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &6897927854810471888
 GameObject:
   m_ObjectHideFlags: 0
