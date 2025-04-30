@@ -49,7 +49,7 @@ public class PlayerPrefsSDKAdapter : AbstractSDKAdapter
         return true;
     }
 
-    public override bool IsMobile => false;
+    public override bool IsMobile => true;
     public override bool IsSpecialFlag => true;
     public override string Language => Application.systemLanguage.ToString();
     public override bool IsAuthorized => false;

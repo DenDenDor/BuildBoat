@@ -46,7 +46,7 @@ public class FactoryController : MonoBehaviour
 
         foreach (var prefab in allPrefabs)
         {
-            if (PrefabUtility.IsPartOfAnyPrefab(prefab))
+            if (prefab.gameObject.scene.name == null)
             {
                 _prefabs.Add(prefab);
             }

@@ -20,6 +20,11 @@ MonoBehaviour:
     - 44e359281e899a5499882579f4806a3a
   - pin: 0
     path:
+    - Assets/Scenes/Boostrap.unity
+    guid:
+    - ff139d7dc3a34884f9e288cd4e72d664
+  - pin: 0
+    path:
     - Assets/BOAT_LOGIC/BoatSim.unity
     guid:
     - 0004a0a3f270f6c4aac22b5ed012944f
@@ -108,11 +113,6 @@ MonoBehaviour:
     - Assets/Third-party/Content/PolygonPrototype/Scenes/Demo.unity
     guid:
     - e308ad70bb070dd41a0c97e5d8548173
-  - pin: 0
-    path:
-    - Assets/Voxel Arsenal/Demo/Scenes/VoxelDemo02.unity
-    guid:
-    - 43d361b9aa881994aa1e0dafb02c23ce
   HasCustomIconKeys: []
   HidedComponentsIconsValues: []
   HidedComponentsIconsKeys: []

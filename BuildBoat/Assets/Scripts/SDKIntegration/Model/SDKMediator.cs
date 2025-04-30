@@ -28,6 +28,8 @@ public class SDKMediator : MonoBehaviour
         }
     }
 
+    public bool IsMobile => _sdkAdapter.IsMobile;
+
     private void Awake()
     {
         if (_instance != null && _instance != this)
@@ -110,7 +112,8 @@ public class SDKMediator : MonoBehaviour
         SaveData defaultSaveData = GenerateSaveData();
         defaultSaveData.SoundValue = value;
         _sdkAdapter.Save(defaultSaveData);
-    }
+    }
+
     public void SaveCoins(int value)
     {
         SaveData defaultSaveData = GenerateSaveData();

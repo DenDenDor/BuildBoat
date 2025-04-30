@@ -9604,6 +9604,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1609418916323931635, guid: 93c12f00d27e8a14692cea20bc51fd61, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 464.2295
+      objectReference: {fileID: 0}
+    - target: {fileID: 3711362110696710118, guid: 93c12f00d27e8a14692cea20bc51fd61, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4222938490854070927, guid: 93c12f00d27e8a14692cea20bc51fd61, type: 3}
+      propertyPath: m_RaycastTarget
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4812981683226886349, guid: 93c12f00d27e8a14692cea20bc51fd61, type: 3}
       propertyPath: m_Name
       value: RewiredInstaller
@@ -9647,6 +9659,10 @@ PrefabInstance:
     - target: {fileID: 6406789892464857882, guid: 93c12f00d27e8a14692cea20bc51fd61, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7274402961114047497, guid: 93c12f00d27e8a14692cea20bc51fd61, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -291.5251
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -13167,6 +13183,10 @@ PrefabInstance:
     - target: {fileID: 6589794999322222685, guid: 9040f622ab8444c8ea643a7329da7cb1, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6683703818415061043, guid: 9040f622ab8444c8ea643a7329da7cb1, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6830334237807345196, guid: 9040f622ab8444c8ea643a7329da7cb1, type: 3}
       propertyPath: m_UseSpriteMesh
