@@ -224,6 +224,7 @@ GameObject:
   - component: {fileID: 6881419512677614789}
   - component: {fileID: 5756882854181208716}
   - component: {fileID: 4926276701678988817}
+  - component: {fileID: 926612245223085292}
   m_Layer: 5
   m_Name: ChestBuyButton
   m_TagString: Untagged
@@ -334,6 +335,21 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &926612245223085292
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6497476029586587527}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41432b567ef2548868af6bfa7fbcf7e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _chestRare: 0
+  _rareColor: {r: 0.05724919, g: 1, b: 0, a: 1}
+  _chestImage: {fileID: 21300000, guid: fbc73d7a9819a4e05b2fd0098fec355f, type: 3}
 --- !u!1 &8718941657609624595
 GameObject:
   m_ObjectHideFlags: 0
