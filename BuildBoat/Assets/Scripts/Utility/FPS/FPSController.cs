@@ -37,23 +37,34 @@ public class FPSController : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
     
-    private float _count;
+    private float _fps;
+    private float _amount;
 
-    public float Count => _count;
+    public float FPS => _fps;
+
+    public event Action LowFPS;
 
     private IEnumerator Start()
     {
         while (true)
         {
-            Debug.LogError("FPS " + _count);
-            _count = 1f / Time.unscaledDeltaTime;
+            Debug.LogError("FPS " + _fps);
+            _fps = 1f / Time.unscaledDeltaTime;
+
+            if (_fps < 40 && _amount < 7)
+            {
+                LowFPS?.Invoke();
+            }
+
+            _amount++;
+            
             yield return new WaitForSeconds(0.5f);
         }
     }
     
     private void OnGUI()
     {
-        GUI.Label(new Rect(10, 10, 200, 20), $"FPS: {_count:0.}");
+        GUI.Label(new Rect(10, 10, 200, 20), $"FPS: {_fps:0.}");
     }
 
 }
