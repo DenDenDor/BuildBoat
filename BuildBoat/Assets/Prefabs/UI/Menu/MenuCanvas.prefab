@@ -126,7 +126,6 @@ MonoBehaviour:
   _itemsBackLight: {fileID: 5928107545145775172}
   _fingerEndPos: {fileID: 5376436648618805556}
   _offChestColor: {r: 0.4433962, g: 0.4433962, b: 0.4433962, a: 1}
-  _testOpenChest: {fileID: 21300000, guid: fbc73d7a9819a4e05b2fd0098fec355f, type: 3}
 --- !u!114 &743307627528467829
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -140,7 +139,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _itemViewer: {fileID: 5953233150883278803}
-  _testItemSprite: {fileID: 0}
   _chestDatas:
   - {fileID: 11400000, guid: 86c2b16de840d4fdcb54052e2095dc3a, type: 2}
   - {fileID: 11400000, guid: 39f1447517ee3470fbeadfb7891d2726, type: 2}
@@ -221,6 +219,7 @@ GameObject:
   - component: {fileID: 7089131078675384327}
   - component: {fileID: 1205267673372327802}
   - component: {fileID: 5019751693331572179}
+  - component: {fileID: 4134721495099948088}
   m_Layer: 5
   m_Name: SailAwayButton
   m_TagString: Untagged
@@ -333,6 +332,19 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &4134721495099948088
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 357249941735714386}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbb4adbae2077aa4eb78c7bead530ed1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _button: {fileID: 5019751693331572179}
 --- !u!1 &397921235718508285
 GameObject:
   m_ObjectHideFlags: 0
