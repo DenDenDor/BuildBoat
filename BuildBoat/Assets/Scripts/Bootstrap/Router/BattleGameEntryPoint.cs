@@ -10,6 +10,7 @@ public class BattleGameEntryPoint : AbstractGameEntryPoint
         new FactoryRouter(),
         new BuildRouter(),
         new InventoryRouter(),
+        new ShopRouter(),
         new FPSRouter(),
     };
 }

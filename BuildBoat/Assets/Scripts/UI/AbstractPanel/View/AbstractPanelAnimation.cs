@@ -26,12 +26,15 @@ public class AbstractPanelAnimation : MonoBehaviour
         KillAllTweens();
 
         _canvasGroup.alpha = 0f;
+        _canvasGroup.blocksRaycasts = false;
         _animatedTransform.localScale = _originalScale * 0;
         
         _fadeTween = _canvasGroup.DOFade(1f, fadeDuration)
             .SetEase(fadeEase)
+            .OnStart(() => _canvasGroup.blocksRaycasts = true)
             .OnKill(() => {
                 _canvasGroup.alpha = 1f;
+                _canvasGroup.blocksRaycasts = true;
             });
 
         _scaleTween = _animatedTransform.DOScale(_originalScale, scaleDuration)
@@ -45,11 +48,14 @@ public class AbstractPanelAnimation : MonoBehaviour
 
         _fadeTween = _canvasGroup.DOFade(0f, fadeDuration)
             .SetEase(fadeEase)
+            .OnStart(() => _canvasGroup.blocksRaycasts = false)
             .OnComplete(() => {
                 _canvasGroup.alpha = 0f;
+                _canvasGroup.blocksRaycasts = false;
             })
             .OnKill(() => {
                 _canvasGroup.alpha = 0f;
+                _canvasGroup.blocksRaycasts = false;
             });
 
         _scaleTween = _animatedTransform.DOScale(_originalScale * 0, scaleDuration)
@@ -61,6 +67,7 @@ public class AbstractPanelAnimation : MonoBehaviour
     {
         KillAllTweens();
         _canvasGroup.alpha = 0f;
+        _canvasGroup.blocksRaycasts = false;
         _animatedTransform.localScale = _originalScale * 0;
     }
 
