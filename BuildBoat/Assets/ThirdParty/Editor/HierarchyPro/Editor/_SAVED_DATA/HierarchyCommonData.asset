@@ -15,6 +15,26 @@ MonoBehaviour:
   ScenesTabs:
   - pin: 0
     path:
+    - Assets/Scenes/Stage_5.unity
+    guid:
+    - e964daf8f1dc84b55b9e68517f9772e8
+  - pin: 0
+    path:
+    - Assets/Scenes/Stage_4.unity
+    guid:
+    - 03a4e87ca4fb744cc8eed245b7e3305a
+  - pin: 0
+    path:
+    - Assets/Scenes/Stage_1.unity
+    guid:
+    - bb767432a5e154f8fbfb587044e93613
+  - pin: 0
+    path:
+    - Assets/Scenes/Stage_6.unity
+    guid:
+    - fbacef2c8d0384a57aaee8118bf6ac84
+  - pin: 0
+    path:
     - Assets/Scenes/Stage_3.unity
     guid:
     - 6cf3b8f9baa4b437099a05b4e90ee093
@@ -25,19 +45,14 @@ MonoBehaviour:
     - 7a0778cd2ddd742f0a919410df5f3d58
   - pin: 0
     path:
-    - Assets/Scenes/Stage_2 1.unity
-    guid:
-    - fb2b09f7c0985427a9b2c12dc2943019
-  - pin: 0
-    path:
     - Assets/Scenes/Andrushka.unity
     guid:
     - 7e47a05a04bae724aa8967a818b88f6c
   - pin: 0
     path:
-    - Assets/Scenes/Stage_1.unity
+    - Assets/Scenes/Stage_2 1.unity
     guid:
-    - bb767432a5e154f8fbfb587044e93613
+    - fb2b09f7c0985427a9b2c12dc2943019
   - pin: 0
     path:
     - Assets/Scenes/Battle.unity
@@ -98,21 +113,6 @@ MonoBehaviour:
     - Assets/Voxel Arsenal/Demo/Scenes/VoxelDemo01.unity
     guid:
     - a0b791ee4b389c8489113bb0f39271c8
-  - pin: 0
-    path:
-    - Assets/ThirdParty/Content/RobloxCharacter/Demo/Demo.unity
-    guid:
-    - 32b89faca0ec4f542bd72b810264d0b2
-  - pin: 0
-    path:
-    - Assets/Scenes/Demo/Game.unity
-    guid:
-    - 919b37f3a4164e64d8f8edebc41647fd
-  - pin: 0
-    path:
-    - Assets/Scenes/Demo/Menu.unity
-    guid:
-    - 1638d145ff70b7b4db9d4cde534953d3
   HasCustomIconKeys: []
   HidedComponentsIconsValues: []
   HidedComponentsIconsKeys: []
