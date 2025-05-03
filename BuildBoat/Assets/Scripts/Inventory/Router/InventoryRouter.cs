@@ -19,12 +19,35 @@ public class InventoryRouter : IRouter
         
         foreach (var blockType in allValues) 
             _items.Add(new InventoryModelGroup(new InventoryItem(blockType), 0));
+        
+        var items =  SDKMediator.Instance.GenerateSaveData().Items;
 
-        UpdateBlockAmount(BlockType.Grass, 15);
-        UpdateBlockAmount(BlockType.Rock, 25);
-        UpdateBlockAmount(BlockType.Sand, 25);
-        UpdateBlockAmount(BlockType.Wood, 25);
-        UpdateBlockAmount(BlockType.Motor, 1);
+        Debug.LogError("ITEMS " + items.Length);
+
+        if (items.Length == 0)
+        {
+            UpdateBlockAmount(BlockType.Grass, 15);
+            UpdateBlockAmount(BlockType.Rock, 25);
+            UpdateBlockAmount(BlockType.Sand, 25);
+            UpdateBlockAmount(BlockType.Wood, 25);
+            UpdateBlockAmount(BlockType.Motor, 1);
+            
+            List<SavableItem> savableItems = new List<SavableItem>();
+
+            foreach (var item in _items)
+            {
+                savableItems.Add(new SavableItem(){Amount = item.Amount, BlockType = item.InventoryItem.BlockType});
+            }
+            
+            SDKMediator.Instance.SaveItems(savableItems.ToArray());
+        }
+        else
+        {
+            foreach (var item in items)
+            {
+                UpdateBlockAmount(item.BlockType, item.Amount);
+            }
+        }
 
         foreach (var item in _items)
         {
@@ -54,6 +77,19 @@ public class InventoryRouter : IRouter
 
     private void OnUpdated(InventoryModelGroup obj)
     {
+        Debug.LogError("A D D   I N VE N T O R Y " + obj.InventoryItem + " : " + obj.Amount);
+
+        _items.FirstOrDefault(x => x.InventoryItem.BlockType == obj.InventoryItem.BlockType).Amount = obj.Amount;
+
+        List<SavableItem> savableItems = new List<SavableItem>();
+
+        foreach (var item in _items)
+        {
+            savableItems.Add(new SavableItem(){Amount = item.Amount, BlockType = item.InventoryItem.BlockType});
+        }
+        
+        SDKMediator.Instance.SaveItems(savableItems.ToArray());
+
         Window.GetIcon(obj).UpdateText(obj.Amount);
     }
 

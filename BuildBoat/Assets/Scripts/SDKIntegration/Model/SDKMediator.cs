@@ -121,4 +121,19 @@ public class SDKMediator : MonoBehaviour
         _sdkAdapter.Save(defaultSaveData);
     }
 
+
+    public void SaveGoldAmount(int value)
+    {
+        SaveData defaultSaveData = GenerateSaveData();
+        defaultSaveData.GoldAmount = value;
+        _sdkAdapter.Save(defaultSaveData);
+    }
+
+    public void SaveItems(SavableItem[] value)
+    {
+        SaveData defaultSaveData = GenerateSaveData();
+        defaultSaveData.Items = value;
+        _sdkAdapter.Save(defaultSaveData);
+    }
+
 }

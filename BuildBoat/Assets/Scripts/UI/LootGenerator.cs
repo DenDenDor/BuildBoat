@@ -91,6 +91,11 @@ public class LootGenerator : MonoBehaviour
 
             Sprite icon = GetIconForBlockType(item.Key);
 
+            for (int i = 0; i < item.Value; i++)
+            {
+                InventoryController.Instance.AddBlock(item.Key);
+            }
+
             _itemViewer.View(icon, item.Value, rareColor);
             yield return new WaitForSeconds(0.7f);
         }

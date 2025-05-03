@@ -6,6 +6,11 @@ public class FPSRouter : IRouter
 
     public void Init()
     {
+        if (Object.FindObjectOfType<FPSController>() == null)
+        {
+            return;
+        }
+        
         FPSController.Instance.LowFPS += OnGetLowFPS;
     }
 

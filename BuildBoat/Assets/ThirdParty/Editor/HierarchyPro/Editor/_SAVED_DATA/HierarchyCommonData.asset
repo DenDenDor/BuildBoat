@@ -15,14 +15,14 @@ MonoBehaviour:
   ScenesTabs:
   - pin: 0
     path:
-    - Assets/Scenes/Battle.unity
-    guid:
-    - 44e359281e899a5499882579f4806a3a
-  - pin: 0
-    path:
     - Assets/Scenes/Boostrap.unity
     guid:
     - ff139d7dc3a34884f9e288cd4e72d664
+  - pin: 0
+    path:
+    - Assets/Scenes/Battle.unity
+    guid:
+    - 44e359281e899a5499882579f4806a3a
   - pin: 0
     path:
     - Assets/Scenes/Andrushka.unity

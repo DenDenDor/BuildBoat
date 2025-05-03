@@ -11,6 +11,7 @@ public class BattleGameEntryPoint : AbstractGameEntryPoint
         new BuildRouter(),
         new InventoryRouter(),
         new ShopRouter(),
+        new GoldRouter(),
         new FPSRouter(),
     };
 }
