@@ -1,5 +1,6 @@
 using System;
 using System.Linq;
+using TMPro;
 using UnityEngine;
 
 public class SDKMediator : MonoBehaviour
@@ -29,6 +30,7 @@ public class SDKMediator : MonoBehaviour
     }
 
     public bool IsMobile => _sdkAdapter.IsMobile;
+    public AbstractSDKAdapter SDKAdapter => _sdkAdapter;
 
     private void Awake()
     {

@@ -1,11 +1,10 @@
 using System;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class BuyMoneyView : MonoBehaviour
+public class BuyMoneyView : AbstractPaymentView
 {
-    [SerializeField] private ShopItemType _shopItemType;
-
     private Button _button;
 
     private void Awake()

@@ -1,9 +1,8 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class BuyItemView : MonoBehaviour
+public class BuyItemView : AbstractPaymentView
 {
-    [SerializeField] private ShopItemType _shopItemType;
     [SerializeField]  private Button _button;
     
     private void Awake()
