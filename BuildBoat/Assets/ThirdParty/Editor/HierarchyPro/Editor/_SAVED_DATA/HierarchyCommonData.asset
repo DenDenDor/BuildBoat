@@ -15,6 +15,16 @@ MonoBehaviour:
   ScenesTabs:
   - pin: 0
     path:
+    - Assets/Scenes/Finish.unity
+    guid:
+    - 8fa09228221a34c34a219bf5ba7d3a6f
+  - pin: 0
+    path:
+    - Assets/Scenes/Stage_6.unity
+    guid:
+    - fbacef2c8d0384a57aaee8118bf6ac84
+  - pin: 0
+    path:
     - Assets/Scenes/Stage_5.unity
     guid:
     - e964daf8f1dc84b55b9e68517f9772e8
@@ -25,19 +35,19 @@ MonoBehaviour:
     - 03a4e87ca4fb744cc8eed245b7e3305a
   - pin: 0
     path:
-    - Assets/Scenes/Stage_1.unity
-    guid:
-    - bb767432a5e154f8fbfb587044e93613
-  - pin: 0
-    path:
-    - Assets/Scenes/Stage_6.unity
-    guid:
-    - fbacef2c8d0384a57aaee8118bf6ac84
-  - pin: 0
-    path:
     - Assets/Scenes/Stage_3.unity
     guid:
     - 6cf3b8f9baa4b437099a05b4e90ee093
+  - pin: 0
+    path:
+    - Assets/Scenes/Battle.unity
+    guid:
+    - 44e359281e899a5499882579f4806a3a
+  - pin: 0
+    path:
+    - Assets/Scenes/Stage_1.unity
+    guid:
+    - bb767432a5e154f8fbfb587044e93613
   - pin: 0
     path:
     - Assets/Scenes/Stage_2.unity
@@ -53,11 +63,6 @@ MonoBehaviour:
     - Assets/Scenes/Stage_2 1.unity
     guid:
     - fb2b09f7c0985427a9b2c12dc2943019
-  - pin: 0
-    path:
-    - Assets/Scenes/Battle.unity
-    guid:
-    - 44e359281e899a5499882579f4806a3a
   - pin: 0
     path:
     - Assets/Scenes/SampleScene.unity
@@ -108,11 +113,6 @@ MonoBehaviour:
     - Assets/Voxel Arsenal/Demo/Scenes/VoxelDemo19.unity
     guid:
     - c47d24e43be7d3a4982035158325d832
-  - pin: 0
-    path:
-    - Assets/Voxel Arsenal/Demo/Scenes/VoxelDemo01.unity
-    guid:
-    - a0b791ee4b389c8489113bb0f39271c8
   HasCustomIconKeys: []
   HidedComponentsIconsValues: []
   HidedComponentsIconsKeys: []

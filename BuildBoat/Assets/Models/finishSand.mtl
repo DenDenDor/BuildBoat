@@ -1,0 +1,18 @@
+newmtl MeshSandmountain1Mtl
+Material Color
+Ka 1 0.612066 0.325037
+Kd 1 0.612066 0.325037
+Ks 0.0392157 0.0240026 0.0127465 
+
+d 1
+
+Ns 0
+
+map_Ka MeshSandmountain1_diff.png
+map_Kd MeshSandmountain1_diff.png
+map_d MeshSandmountain1_diff.png
+
+map_Bump MeshSandmountain1_nmap.png
+
+map_Ns MeshSandmountain1_spec.png
+
