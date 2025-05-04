@@ -1,0 +1,18 @@
+newmtl Box1Mtl
+Material Color
+Ka 0.144972 0.0370285 0.000638183
+Kd 0.144972 0.0370285 0.000638183
+Ks 0.0108018 0.00275899 4.75509e-05 
+
+d 1
+
+Ns 0
+
+map_Ka Box1_diff.png
+map_Kd Box1_diff.png
+map_d Box1_diff.png
+
+map_Bump Box1_nmap.png
+
+map_Ns Box1_spec.png
+
